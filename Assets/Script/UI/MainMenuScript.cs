@@ -6,17 +6,30 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public TextAsset saveFile;
-    // Start is called before the first frame update
+
+    // UNITY BUILD-IN METHOD
     void Start()
     {
         
     }
     
+    // METHOD
     public void playGame()
     {
-        Debug.Log("Scene telah berhasil di load");
-        SceneManager.LoadScene("MainScene");
+        Debug.Log("Play");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         loadSavedGame();
+    }
+
+    public void settingGame()
+    {
+        Debug.Log("Settings");
+    }
+
+    public void exitGame()
+    {
+        Debug.Log("Exit");
+        Application.Quit();
     }
 
     public void loadSavedGame()
@@ -25,6 +38,7 @@ public class MainMenuScript : MonoBehaviour
         Debug.Log(saveData.getProgress());
     }
 
+    // CLASS
     class SavedData
     {
         public string date, progress;
