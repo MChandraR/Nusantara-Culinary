@@ -10,6 +10,7 @@ public class MainMenuScript : MonoBehaviour
     // UNITY BUILD-IN METHOD
     void Start()
     {
+        
     }
     
     // METHOD
@@ -33,8 +34,22 @@ public class MainMenuScript : MonoBehaviour
 
     public void loadSavedGame()
     {
-        SavedDataModel saveData = JsonUtility.FromJson<SavedDataModel>(saveFile.text);
+        SavedData saveData = JsonUtility.FromJson<SavedData>(saveFile.text);
         Debug.Log(saveData.getProgress());
     }
 
+    // CLASS
+    class SavedData
+    {
+        public string date, progress;
+        public string getDate()
+        {
+            return date;
+        }
+
+        public string getProgress()
+        {
+            return progress;
+        }
+    }
 }
