@@ -6,10 +6,18 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public TextAsset saveFile;
+    public GameObject mainCamera;
+    public AudioSource SFXSource;
+    public AudioClip audioClip;
 
     // UNITY BUILD-IN METHOD
     void Start()
     {
+        mainCamera = GameObject.Find("Main Camera").gameObject;
+        if (mainCamera.GetComponents<AudioSource>()[1] != null)
+        {
+            SFXSource = mainCamera.GetComponents<AudioSource>()[1];
+        }
     }
     
     // METHOD
@@ -35,6 +43,14 @@ public class MainMenuScript : MonoBehaviour
     {
         SavedDataModel saveData = JsonUtility.FromJson<SavedDataModel>(saveFile.text);
         Debug.Log(saveData.getProgress());
+    }
+
+    public void PlayBtnSFX()
+    {
+        if (SFXSource != null)
+        {
+            SFXSource.Play();
+        }
     }
 
 }
