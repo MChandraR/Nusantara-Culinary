@@ -9,6 +9,7 @@ public class MainMenuScript : MonoBehaviour
     public GameObject mainCamera;
     public AudioSource SFXSource;
     public AudioClip audioClip;
+    public GameObject settingsCanvas;
 
     // UNITY BUILD-IN METHOD
     void Start()
@@ -51,6 +52,11 @@ public class MainMenuScript : MonoBehaviour
         {
             SFXSource.Play();
         }
+    }
+
+    public void test()
+    {
+        Debug.Log("Test");
     }
 
 }
