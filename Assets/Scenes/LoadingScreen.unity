@@ -582,7 +582,7 @@ GameObject:
   - component: {fileID: 193056041}
   - component: {fileID: 193056044}
   m_Layer: 5
-  m_Name: New Btn
+  m_Name: Btn_NewGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1228,10 +1228,10 @@ RectTransform:
   m_Father: {fileID: 14992659}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 178, y: 54}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &588214805
 MonoBehaviour:
@@ -2579,8 +2579,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6724fd252aac63b4ba86609509b3fdac, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.17
-  m_Pitch: 1
+  m_Volume: 0.3
+  m_Pitch: 3
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -3287,10 +3287,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc3ed3c905cd1f46adf9fa9576d833c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sourceObj: {fileID: 0}
+  targetObjBgm: {fileID: 0}
+  targetObjSfx: {fileID: 0}
   sliderSens: {fileID: 0}
   sliderBgm: {fileID: 0}
   sliderSfx: {fileID: 0}
-  targetObjBgm: 0
 --- !u!1 &1330465573
 GameObject:
   m_ObjectHideFlags: 0

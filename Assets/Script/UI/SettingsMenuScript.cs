@@ -2,24 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class SettingsMenuScript : MonoBehaviour
 {
-    [Header("References")]
+    [Header("REFERENCES")]
+
+    [Space][Header("- Object Ref")]
+    public GameObject sourceObj;
+
+    [Space][Header("- Audio Ref")]
+    public AudioSource targetObjBgm;
+    public AudioSource targetObjSfx;
+
+    [Space][Header("- Slider Ref")]
     public Slider sliderSens;
     public Slider sliderBgm;
     public Slider sliderSfx;
-
-    [Header("Slider Config")]
-    public float targetObjBgm = new float();
 
     void Start()
     {
         sliderSens   = GameObject.Find("Sens").GetComponent<Slider>();
         sliderBgm    = GameObject.Find("Bgm").GetComponent<Slider>();
-        sliderSens   = GameObject.Find("Sfx").GetComponent<Slider>();
+        sliderSfx    = GameObject.Find("Sfx").GetComponent<Slider>();
 
-        targetObjBgm = GameObject.Find("Main Camera").GetComponent<AudioSource>().volume;
+        sourceObj    = GameObject.Find("Main Camera");
+        targetObjBgm = sourceObj.GetComponents<AudioSource>()[0];
+        targetObjSfx = sourceObj.GetComponents<AudioSource>()[1];
 
         setDefaultValue();
     }
@@ -31,14 +40,16 @@ public class SettingsMenuScript : MonoBehaviour
 
     private void changeValue()
     {
-        if(targetObjBgm != sliderBgm.value)
-        {
-            targetObjBgm = sliderBgm.value;
-        }
+        if (targetObjBgm.volume != sliderBgm.value)
+            targetObjBgm.volume = sliderBgm.value;
+
+        if (targetObjSfx.volume != sliderSfx.value)
+            targetObjSfx.volume = sliderSfx.value;
     }
 
     private void setDefaultValue()
     {
-        sliderBgm.value = targetObjBgm;
+        sliderBgm.value = targetObjBgm.volume;
+        sliderSfx.value = targetObjSfx.volume;
     }
 }
