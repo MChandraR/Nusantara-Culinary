@@ -38,7 +38,6 @@ public class MainMenuCamera : MonoBehaviour
            
         }
 
-
         FOV -= FOV - Input.mouseScrollDelta.y >= 30f && FOV - Input.mouseScrollDelta.y <= 60f ? Input.mouseScrollDelta.y : 0f;
         camera.fieldOfView = FOV;
 

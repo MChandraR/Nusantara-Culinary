@@ -1,0 +1,17 @@
+{
+    "kota":
+    [
+      {
+        "nama_kota": "John",
+        "recipe": ["kota"]
+      },
+      {
+        "nama_kota": "John",
+        "recipe": ["kota"]
+      },
+      {
+        "nama_kota": "John",
+        "recipe": ["kota"]
+      }
+    ]
+  }
