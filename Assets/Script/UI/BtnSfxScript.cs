@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class BtnSfxScript : MonoBehaviour,IPointerEnterHandler
 {
-
     public GameObject mainUI;
 
     private void Start()

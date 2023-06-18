@@ -10,7 +10,7 @@ public class MainMenuCamera : MonoBehaviour
     public float[] limitZ;
     public float[] limitFOV;
     public float FOV;
-    public Camera camera;
+    public new Camera camera;
 
     void Start()
     {
