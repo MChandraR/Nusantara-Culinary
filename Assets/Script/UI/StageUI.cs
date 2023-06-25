@@ -38,4 +38,9 @@ public class StageUI : MonoBehaviour
 
         detailStageUI.enabled = true;
     }
+
+    public void  startGame()
+    {
+        Debug.Log("Start the game");
+    }
 }
